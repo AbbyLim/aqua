@@ -1,0 +1,139 @@
+
+<!-- DEBUG-VIEW START 1 APPPATH/Views/front/aquarium/create_ko.php -->
+<!DOCTYPE html>
+<html>
+<head>
+
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>광화문 해치마당 - 아쿠아리움</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link href="https://unpkg.com/swiper@7.4.1/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/front/aquarium/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="assets/front/aquarium/lib/iro/iro.min.js"></script>
+    <script src="assets/front/aquarium/js/select.js"></script>
+
+    <!--<script src="assets/front/aquarium/js/color_picker.js"></script>-->
+</head>
+
+<body class="">
+<div class="wrapper wrapper--exp border-box">
+    <div class="contents">
+        <div class="inner">
+            <form id="createForm" name="guideForm" method="post" action="/aquarium/complete">
+                <input type="hidden" name="colors" />
+                <input type="hidden" name="brushes" />
+                <input type="hidden" name="brushIndices" />
+                <input type="hidden" name="matrix" />
+            </form>
+            <!-- 물고기 만들기(색칠&브러쉬) -->
+            <div class="cont__fish">
+                <div class="comm__tit">
+                    <p class="tx_tit">나만의 물고기 만들기</p>
+                    <p class="tx_msg1">브러쉬와 컬러를 선택 후</p>
+                    <p class="tx_msg2">칠할 곳을 터치해주세요~</p>
+                </div>
+
+                <div class="fish__color border-box">
+                    <div class="svg__area">
+                        <!-- 캡쳐 영역 -->
+                        <div class="capture_box"></div>
+                        <div class="bg__brush">
+                            <!-- js 에서 append -->
+                        </div>
+                    </div>
+
+                    <div class="pick__draw">
+                        <p class="tx_msg">컬러 변경을 원하시면 <strong>여기를 터치해주세요!</strong></p>
+
+                        <button type="button" class="btn btn-color"><i class="ico"></i>컬러</button>
+
+                        <!--
+                            브러쉬 : ico-brush
+                            브러쉬 : ico-crayon
+                            브러쉬 : ico-marker
+                        -->
+                        <button type="button" class="btn btn-brush"><i class="ico"></i>브러쉬</button>
+
+                        <div id="colorPickBox" class="lay lay-color">
+                            <button type="button" class="lay-close">닫기</button>
+
+                            <p class="lay-tit"><strong>컬러</strong>를 선택해주세요!</p>
+                        </div>
+                        <div id="brushPickBox" class="lay lay-brush">
+                            <button type="button" class="lay-close">닫기</button>
+
+                            <p class="tx_brush_msg"><strong>브러쉬</strong>를 선택해주세요!</p>
+                            <ul class="brush__list">
+                                <li data-brush="0" class="on">
+                                    <i class="ico-brush"></i>
+                                    <span class="tx_nm">물감</span>
+                                </li>
+                                <li data-brush="1">
+                                    <i class="ico-crayon"></i>
+                                    <span class="tx_nm">크레용</span>
+                                </li>
+                                <li data-brush="2">
+                                    <i class="ico-marker"></i>
+                                    <span class="tx_nm">마커</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btn-group">
+                    <button type="button" id="btnComplete" class="btn_complete">완성</button>
+                </div>
+            </div>
+            <!-- // -->
+            <script src="assets/front/aquarium/js/create.js"></script>
+            <script>
+                $(function() {
+                    fish_index = 1; // 파라미터 없을 땐 1번 물고기 노출
+
+                    $(".svg__area > .capture_box").append(`<object class="fishsvg" type="image/svg+xml" data="assets/front/aquarium/images/fishsvg/fish${fish_index}.svg"></object>`);
+
+                    $("#btnComplete").on("click", function() {
+                        // Preloader
+                        preloader2.show();
+
+                        $('input[name=colors]').val(sendColorHex);
+                        $('input[name=brushes]').val(sendBrush);
+                        $('input[name=matrix]').val(sendMatrixVal);
+
+                        console.log(sendColorHex);
+                        console.log(sendBrush);
+                        console.log(sendMatrixVal);
+
+                        // $('#createForm').submit();
+                    });
+                });
+            </script>
+
+        </div>
+    </div>
+</div>
+<div class="pageLoader" style="display:none;">
+    <div class="dimmed"></div>
+    <div class="sk-cube-grid">
+        <div class="sk-cube sk-cube1"></div>
+        <div class="sk-cube sk-cube2"></div>
+        <div class="sk-cube sk-cube3"></div>
+        <div class="sk-cube sk-cube4"></div>
+        <div class="sk-cube sk-cube5"></div>
+        <div class="sk-cube sk-cube6"></div>
+        <div class="sk-cube sk-cube7"></div>
+        <div class="sk-cube sk-cube8"></div>
+        <div class="sk-cube sk-cube9"></div>
+    </div>
+</div>
+</body>
+</html>
+<!-- DEBUG-VIEW ENDED 1 APPPATH/Views/front/aquarium/create_ko.php -->

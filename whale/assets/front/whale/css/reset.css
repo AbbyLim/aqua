@@ -1,0 +1,76 @@
+/******************** 
+	reset
+	ver1.0
+	2024.08.08
+	임수경
+
+********************/
+
+@charset "utf-8";
+
+@font-face {
+  font-family: 'KakaoBig';
+  font-style: normal;
+  font-weight: 400;
+  src: local('KakaoBig'), 	url('../fonts/KakaoBig.woff2') format('woff2'), 	url('../fonts/KakaoBig.woff') format('woff');
+}
+@font-face {
+  font-family: 'KakaoBig Bold';
+  font-style: normal;
+  font-weight: 700;
+  src: local('KakaoBig Bold'), url('../fonts/KakaoBig-Bold.woff2') format('woff2'), url('../fonts/KakaoBig-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'KakaoSmall';
+  font-style: normal;
+  font-weight: 400;
+  src: local('KakaoSmall'), url('../fonts/KakaoSmall.woff2') format('woff2'), url('../fonts/KakaoSmall.woff') format('woff');
+}
+@font-face {
+  font-family: 'KakaoSmall Light';
+  font-style: normal;
+  font-weight: 300;
+  src: local('KakaoSmall Light'), url('../fonts/KakaoSmall-Light.woff2') format('woff2'), url('../fonts/KakaoSmall-Light.woff') format('woff');
+}
+
+
+/* CSS 초기화 */
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video, button {background:transparent;border:0;-webkit-box-sizing:border-box;box-sizing:border-box;font-weight:normal;font-family:"KakaoSmall", HelveticaNeue, DroidSans, Sans-serif, Helvetica;letter-spacing:-0.5px;margin:0;padding:0;vertical-align:baseline;}
+html {font-size:16px;color:#161616;}
+html, body {font-family:"KakaoBig","Apple SD Gothic Neo";}
+body * {font-family:"KakaoBig"; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block;}
+nav ul, li {list-style:none;}
+a {background:transparent;-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;text-decoration:none;vertical-align:baseline;}
+img {max-width:100%;vertical-align:top;}
+
+table {table-layout:fixed;border-collapse: collapse; border-spacing: 0; vertical-align: baseline; word-break: break-all; }
+
+input {
+	border-radius:0;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:"KakaoSmall", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	font-weight:normal;
+	margin:0;
+	letter-spacing:-.5px;
+	padding:0;
+	vertical-align:top;
+}
+
+select, textarea {
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	font-family:"KakaoSmall", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+	letter-spacing:-.5px;
+}
+
+.hide { font-size:0; height:0; left:-20000px; overflow:hidden; position:absolute; text-indent:-20000px; width:0; }
+
+header,
+nav,
+section,
+article,
+aside,
+footer { display:block; }

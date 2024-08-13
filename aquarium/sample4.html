@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8'>
+	
+	<title>SVG</title>
+		
+	<style>
+.icon {
+  display: inline-block;
+  width: 500px;
+  height: 500px;
+  overflow: hidden;
+}
+.icon-del {
+  background: url("assets/a1.png") no-repeat center;
+}
+.icon > .icon {
+  position: relative;
+  left: -80px;
+  border-right: 80px solid transparent;
+  -webkit-filter: drop-shadow(80px 0);
+  filter: drop-shadow(rgb(204, 51, 255) 80px 0);
+}
+
+.imgicon1 {
+  -webkit-filter: drop-shadow(80px 0);
+  filter: drop-shadow(rgb(204, 51, 255) 80px 0);
+}
+
+.imgicon2 {
+  -webkit-filter: url(#f2);
+  filter: url(#f2);
+}
+  </style>
+</head>
+<body>
+    <svg x=0 y=0 width=1000 height=500 color-interpolation-filters="sRGB">
+      <defs>
+        <filter id="f1" x="0" y="0" width="100%" height="100%">          
+          <feOffset result="offOut" in="SourceGraphic" dx="20" dy="20" />
+          <feBlend in="SourceGraphic" in2="offOut" mode="normal" />
+        </filter>
+              
+        <filter id="f2" x="0" y="0" width="100%" height="100%">
+          <feColorMatrix type="matrix" values="0 0 0 0 0.82
+                                               0 0 0 0 0.21 
+                                               0 0 0 0 1 
+                                               0 0 0 1 0" />
+        </filter>
+      </defs>    
+      <!-- <image filter="url(#f1)" class="imgicon1" xlink:href="assets/a1.png"  x="0" y="0" height="100%" width="100%"/> -->
+      <image class="imgicon2" xlink:href="assets/a1.png" x="-280" y="-100" height="100%" width="100%" /> 
+      <image class="imgicon2" xlink:href="assets/b1.png" x="0" y="0" height="100%" width="100%" /> 
+      <image class="imgicon2" xlink:href="assets/c1.png" x="300" y="100" height="100%" width="100%" /> 
+      
+    </svg>
+</body>
+</html>

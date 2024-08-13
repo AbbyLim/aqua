@@ -1,0 +1,38 @@
+/********************
+	style
+	ver1.0
+	2023.03.08
+	임수경
+
+********************/
+
+@charset "UTF-8";
+
+html,
+body {height:100%;width:100%;-webkit-text-size-adjust:none;-ms-text-size-adjust :none;-moz-text-size-adjust :none;-o-text-size-adjust :none;-webkit-font-smoothing: antialiased}
+a, button {-webkit-tap-highlight-color: transparent;}
+.blind {font-size:0;line-height:0;color:transparent;width:0;height:0;opacity:0;overflow:hidden;}
+.pc-only {}
+.mo-only {display:none !important;}
+@media (max-width:720px) {
+	.pc-only {display:none;}
+	.mo-only {display:block !important;}
+}
+.wrap {position:relative;padding:0;}
+.main-wrap {background:#fee101;}
+strong, strong * {font-weight:700;}
+.dp-tb {display:table;width:100%;table-layout:fixed;}
+.dp-tb .dp-tbc {display:table-cell;}
+@media (min-width:1920px) {
+
+}
+@media (max-width:1280px) {
+	
+}
+/*@media (max-width:775px) {
+	.footer-right, .comp-info {float:none;width:100%;}
+	.footer-right {text-align:left;}
+}*/
+@media (max-width:720px) {
+
+}

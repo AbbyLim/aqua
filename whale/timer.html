@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>광화문 해치마당 - 아쿠아리움</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link href="https://unpkg.com/swiper@7.4.1/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/front/whale/css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="assets/front/whale/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="assets/front/whale/js/common.js"></script>
+	<style>
+		.wrap {padding:10vw;background:#202020;}
+		.timer-wrap {width:80vw;height:80vw;}
+		.radial-timer {position:relative;width:80vw;height:80vw;/*overflow:hidden;*/}
+		.radial-timer .radial-timer-half {position:absolute;width:40vw;height:80vw;border-radius:40vw 0 0 40vw;background:#f00;}
+		.radial-timer .radial-timer-half:nth-of-type(2) {transform-origin:center right;transform:rotate(180deg);z-index:10;}
+		.radial-timer .radial-timer-half:before {content:"";display:block;position:absolute;top:5vw; left:5vw;width:35vw;height:70vw;border-radius:40vw 0 0 40vw;background:#202020;}
+		.radial-timer .radial-timer-half:after {content:"";display:block;position:absolute;width:100vw;right:0;height:160vw;top:50%;margin-top:-80vw;transform-origin:center right;background:#202020;}
+		.radial-timer.s-animate {transform-origin: center right;}
+		.radial-timer.s-animate .radial-timer-half:nth-of-type(1):after {animation: rotateLeftMask 5s 1 linear;}
+		.radial-timer.s-animate .radial-timer-half:nth-of-type(2):after {animation: rotateRightMask 5s 1 linear;}
+		@-webkit-keyframes rotateLeftMask {
+		  0% {
+			-webkit-transform: rotate(0deg);
+		  }
+		  50% {
+			-webkit-transform: rotate(0deg);
+		  }
+		  99% {
+			opacity:1;
+		  }
+		  100% {
+			-webkit-transform: rotate(180deg);
+			opacity:0;
+		  }
+		}
+		@-webkit-keyframes rotateRightMask {
+		  0% {
+			-webkit-transform: rotate(0deg);
+		  }
+		  50% {
+			-webkit-transform: rotate(180deg);
+			visibility: hidden;
+		  }
+		  99% {
+			opacity:1;
+		  }
+		  100% {
+			-webkit-transform: rotate(180deg);
+			visibility: hidden;
+			opacity:0;
+		  }
+		}
+		.time-box {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;width:40vw;height:40vw;border-radius:40vw;text-align:center;z-index:100;}
+		.time-box button {position:absolute;top:0;left:0;width:100%;height:100%;font-size:30px;text-align:center;line-height:40vw;}
+		.timer-wrap.finished:before {content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:200;}
+		.timer-wrap.finished .radial-timer .radial-timer-half:after {display:none;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="timer-wrap">
+			<div class="radial-timer s-animate">
+				<div class="radial-timer-half"></div>
+				<div class="radial-timer-half"></div>
+			</div>
+			<div class="time-box">
+				<button onclick="cheer()" class="btn-count"><span class="total">0</span></button>
+			</div>
+		</div>
+	</div>
+	<script>
+		var count = 0;
+		function cheer(){
+			count += 1;
+			$(".btn-count").find(".total").html(count);
+			/*
+			$(".btn-count").find(".total").addClass("is-active").delay(500)
+			.queue(function(){
+			  $(this).removeClass("is-active").dequeue();
+			  $(".btn-count").find(".total").html(count);
+			});*/
+		}
+		$(function(){
+			setTimeout(() => {
+				$(".timer-wrap").addClass("finished");
+				console.log(count);
+			}, 5000);
+		});
+	</script>
+</body>
+</html>

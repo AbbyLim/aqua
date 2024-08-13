@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>Canvas</title>
+  </head>
+<style>
+</style>
+<script>
+    var img = new Image;
+    img.onload = draw;
+    img.src = "assets/a1.png";
+
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+
+    function draw() {
+        // draw image
+        ctx.drawImage(this, 0, 0);
+
+        // set composite mode
+        ctx.globalCompositeOperation = "source-in";
+
+        // draw color
+        ctx.fillStyle = "#09f";
+        ctx.fillRect(0, 0, c.width, c.height);
+        
+        // fill background in canvas itself
+        ctx.globalCompositeOperation = "destination-over";
+        ctx.fillStyle = "#ddd";
+        ctx.fillRect(0, 0, c.width, c.height);
+    }
+</script>
+</head>
+<body>
+<canvas id="c"></canvas>
+</body>
+</html>

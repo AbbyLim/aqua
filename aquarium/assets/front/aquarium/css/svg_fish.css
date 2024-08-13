@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+#svgImage {position:relative;width:400px!important;height:400px!important;background:transparent}
+.fish-eye{fill:#FFFFFF;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+.fish-div {opacity:1;fill:transparent;mix-blend-mode:multiply;}
+.fish-stroke{fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.fish-selector {opacity:1;fill:transparent;mix-blend-mode:multiply;}
+.fish-inner-line {fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+.point-dot-line {opacity:0.4;fill:#ADADAD;stroke:#FFFFFF;stroke-width:2;stroke-miterlimit:10;}
+.point-dot-one {fill:#EAEAEA;}
+.point-join-line {fill:#FFFFFF;stroke:#EAEAEA;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}

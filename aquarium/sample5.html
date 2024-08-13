@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <title>SVG</title>
+        <style>
+            .imgicon1 {
+                -webkit-filter: url(#f1);
+                filter: url(#f1);
+            }
+            .imgicon2 {
+                -webkit-filter: url(#f2);
+                filter: url(#f2);
+            }
+            .imgicon3 {
+                -webkit-filter: url(#f3);
+                filter: url(#f3);
+            }
+            .imgicon4 {
+                -webkit-filter: url(#f4);
+                filter: url(#f4);
+            }
+        </style>
+    </head>
+<body>
+    <svg x=0 y=0 width=500 height=500 color-interpolation-filters="sRGB">
+        <defs>
+            <filter id="f1" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 0
+                                                    0 0 0 0 0.5
+                                                    0 0 0 0 0.9
+                                                    0 0 0 1 0" />
+            </filter>
+            <filter id="f2" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 0.9
+                                                    0 0 0 0 0
+                                                    0 0 0 0 0
+                                                    0 0 0 1 0" />
+            </filter>
+            <filter id="f3" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 0
+                                                    0 0 0 0 0
+                                                    0 0 0 0 0.9
+                                                    0 0 0 1 0" />
+            </filter>
+            <filter id="f4" x="0" y="0" width="100%" height="100%">
+                <feColorMatrix type="matrix" values="0 0 0 0 0
+                                                    0 0 0 0 0.9
+                                                    0 0 0 0 0
+                                                    0 0 0 1 0" />
+            </filter>
+        </defs>
+        <image class="imgicon1" xlink:href="assets/a1.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon2" xlink:href="assets/a2.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon3" xlink:href="assets/a3.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon4" xlink:href="assets/a4.png" x="0" y="0" height="100%" width="100%" />
+    </svg>
+    <svg x=0 y=0 width=500 height=500 color-interpolation-filters="sRGB">
+        <image class="imgicon1" xlink:href="assets/b1.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon2" xlink:href="assets/b2.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon3" xlink:href="assets/b3.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon4" xlink:href="assets/b4.png" x="0" y="0" height="100%" width="100%" />
+    </svg>
+    <svg x=0 y=0 width=500 height=500 color-interpolation-filters="sRGB">
+        <image class="imgicon1" xlink:href="assets/c1.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon2" xlink:href="assets/c2.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon3" xlink:href="assets/c3.png" x="0" y="0" height="100%" width="100%" />
+        <image class="imgicon4" xlink:href="assets/c4.png" x="0" y="0" height="100%" width="100%" />
+    </svg>
+</body>
+</html>
